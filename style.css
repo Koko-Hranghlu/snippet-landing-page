@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grey_text {
+  color: #333;
+}
+
+.light_text {
+  color: silver;
+}
+
+.container {
+  width: min(90vw, 1024px);
+  margin: auto;
+}
+
+img:not(.logo_img, #search_icon, #hamburger_icon) {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+header.white_bg {
+  background: white;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+nav ul li a {
+  color: black;
+}
+
+#hamburger_button {
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.start_btn {
+  border: none;
+  background: black;
+  color: white;
+  padding: 12px 1rem;
+  border-radius: 3px;
+  
+}
+
+main .intro_1 {
+  background-image: url("Assets/Background.png");
+  background-position: center;
+  background-size: cover;
+  padding-top: 6rem;
+  text-align: center;
+}
+
+.intro_1 h1 {
+  font-size: 3rem;
+}
+
+.intro_1 .intro_image_cont {
+  margin-top: 6rem;
+  transform: translateY(6px);
+}
+
+.intro_2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 0;
+}
+
+.intro_2 h2 {
+  font-size: 2rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer ul {
+  padding-left: 0;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+@media (max-width: 769px) {
+  .intro_2 {
+    flex-wrap: wrap;
+  }
+  
+  .intro_2_text {
+    order: 2;
+  }
+}
+
+@media (max-width: 481px) {
+  nav ul {
+    opacity: 0;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    background: white;
+    box-shadow: 0 0 2px 2px pink;
+    padding: 1rem;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+  
+  nav ul.active {
+    transition: opacity 0.3s ease;
+    pointer-events: auto;
+    opacity: 1;
+  }
+  
+  nav #hamburger_button {
+    display: block;
+  }
+}
